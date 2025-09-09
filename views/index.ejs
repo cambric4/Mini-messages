@@ -2,18 +2,22 @@
 <html>
 <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
-    <h1><%= title %></h1>
-    <a href="/new">Add a new Message</a>
-    <ul>
-        <% messages.forEach((msg, i) => { %>
-            <li>
-                <strong><%= msg.user %></strong> :<%= msg.text %>
-                <em(<%= msg.added.toLocaleString()%>)</em>
-                <a href="/message/<%= i %>">Open</a>
-            </li>
-        <% }) %>
-    </ul>
+    <div class="container">
+        <h1><%= title %></h1>
+        <a href="/new">Add a new Message</a>
+        <ul>
+            <% messages.forEach((msg, i) => { %>
+                <li>
+                    <strong><%= msg.user %></strong> :<%= msg.text %>
+                    <em(<%= msg.added.toLocaleString()%>)</em>
+                    <a href="/message/<%= i %>">Open</a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 </body>
 </html>
